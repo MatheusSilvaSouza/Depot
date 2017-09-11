@@ -1,0 +1,45 @@
+// Place all the styles related to the Store controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.store{
+  ul.catalog{
+    border-top: solid 2px;
+    padding-left: 15px;
+    list-style: none;
+
+    li {
+      border-bottom: solid thin #ddd;
+      font-size: 15px;
+      padding: 8px;
+
+      &::after {
+        clear: both;
+        content: " ";
+        display: block;
+      }
+
+      h3{
+        margin-top: 0;
+      }
+
+      a{
+        text-decoration: none;
+
+      }
+      a:hover{
+        color: #666;
+        background-color: transparent;
+      }
+
+    }
+
+    img {
+      width: 100px;
+      float: left;
+      padding: 3px;
+      margin-right: 15px;
+     }
+  }
+
+}
