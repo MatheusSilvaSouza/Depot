@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
   before_action :layout_params
+  
   def layout_params
     @page_title = 'Catalog'
   end

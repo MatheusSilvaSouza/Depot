@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= @page_title || 'Depot' %></title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title><%= @page_title || 'Depot' %></title>
+    <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-
-
-<body>
-  <header class='main'>
-    <%= image_tag 'Logo.png', alt: 'umanni depot' %>
-    <h1> <%= @page_title %>
+  <body>
+    <header class='main'>
+      <%= image_tag 'Logo.png', alt: 'umanni depot' %>
+      <h1> <%= @page_title %> </h1>
     </header>
     <section class='content'>
       <nav class="side_nav">
@@ -25,10 +23,9 @@
         </ul>
       </nav>
 
-
-      <main class="<%= controller.controller_name %>"
+      <main class="<%= controller.controller_name %>">
         <%= yield %>
       </main>
     </section>
   </body>
-  </html>
+</html>
