@@ -4,12 +4,15 @@
 
 <ul class="catalog">
   <% @all_products. each do |product| %>
-    <li>
-      <%= image_tag(product.image_url) %>
-      <h3> <%= link_to product.title, product  %> </h3>
-      <p> <%= product.description %> </p>
-      <span class="price" style="float: right"><%= product.price %></span>
-    </li>
-  <% end %>
+  <li>
+    <%= image_tag(product.image_url) %>
+    <h3> <%= link_to product.title, product  %> </h3>
+    <p> <%= product.description %> </p>
+    <div class="price">
+    <%= number_to_currency(product.price) %>
+  </div>
+  <!-- <span class="price" style="float: right"><%= product.price %></span> -->
+</li>
+<% end %>
 
 </ul>
