@@ -4,11 +4,17 @@
   <% cache @all_products do %>
     <% @all_products.each do |product| %>
       <% cache product do %>
-        <li>
-          <%= image_tag(product.image_url) %>
-          <h3><%= link_to(product.title, product) %></h3>
-          <p><%= product.description %></p>
-          <div class="price"><%= number_to_currency(product.price) %></div>
+        <li class="row">
+          <div class='col-9'>
+            <%= image_tag(product.image_url) %>
+            <h3><%= link_to(product.title, product) %></h3>
+            <p><%= product.description %></p>
+          </div>
+          <div class='col-3'>
+            <%= button_to 'Add to Cart', itens_groups_path(product_id: product) %>
+            <div class="price"><%= number_to_currency(product.price, unit:'R$') %></div>
+          </div>
+          <% #button_to 'Add to Cart', itens_group_path(product_id: product) %>
         </li>
       <% end %>
     <% end %>

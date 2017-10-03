@@ -17,10 +17,12 @@ class ItensGroupsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create itens_group" do
     assert_difference('ItensGroup.count') do
-      post itens_groups_url, params: { itens_group: { cart_id: @itens_group.cart_id, product_id: @itens_group.product_id } }
+      post itens_groups_url, params: { product_id: products(:ruby).id }
     end
 
-    assert_redirected_to itens_group_url(ItensGroup.last)
+    follow_redirect!
+
+    assert_select 'li', 'Programming Ruby 1.9'
   end
 
   test "should show itens_group" do
