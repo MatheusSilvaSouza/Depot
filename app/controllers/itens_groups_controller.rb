@@ -27,13 +27,12 @@ class ItensGroupsController < ApplicationController
   # POST /itens_groups.json
   def create
     product = Product.find(params[:product_id])
-    @itens_group = @cart.itens_group.build(product: product)
+    @itens_group = @cart.add_product(product)
     # @itens_group = ItensGroup.new(itens_group_params)
 
     respond_to do |format|
       if @itens_group.save
         format.html { redirect_to @itens_group.cart, notice: 'Itens group was successfully created.' }
-        # format.html { redirect_to @itens_group, notice: 'Itens group was successfully created.' }
         format.json { render :show, status: :created, location: @itens_group }
       else
         format.html { render :new }

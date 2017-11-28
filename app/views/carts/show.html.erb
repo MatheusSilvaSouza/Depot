@@ -2,7 +2,7 @@
 
 <ul>
   <% @cart.itens_group.each do |item| %>
-    <li><%= item.product.title %></li>
+    <li><%= item.quantity %>&times; <%= item.product.title %></li>
   <% end %>
 </ul>
 
