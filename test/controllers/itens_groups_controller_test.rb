@@ -36,7 +36,7 @@ class ItensGroupsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update itens_group" do
-    patch itens_group_url(@itens_group), params: { itens_group: { cart_id: @itens_group.cart_id, product_id: @itens_group.product_id } }
+    patch itens_group_url(@itens_group), params: { itens_group: { product_id: @itens_group.product_id } }
     assert_redirected_to itens_group_url(@itens_group)
   end
 

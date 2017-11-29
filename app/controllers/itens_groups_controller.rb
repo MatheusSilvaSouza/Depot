@@ -73,6 +73,6 @@ class ItensGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def itens_group_params
-      params.require(:itens_group).permit(:product_id, :cart_id)
+      params.require(:itens_group).permit(:product_id)
     end
 end
