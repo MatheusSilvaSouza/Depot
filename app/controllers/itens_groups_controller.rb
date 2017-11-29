@@ -32,7 +32,7 @@ class ItensGroupsController < ApplicationController
 
     respond_to do |format|
       if @itens_group.save
-        format.html { redirect_to @itens_group.cart, notice: 'Itens group was successfully created.' }
+        format.html { redirect_to @itens_group.cart }
         format.json { render :show, status: :created, location: @itens_group }
       else
         format.html { render :new }

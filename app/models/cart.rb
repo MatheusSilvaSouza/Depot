@@ -9,4 +9,8 @@ class Cart < ApplicationRecord
     current_item.quantity += 1
     current_item
   end
+
+  def total_price
+    itens_group.to_a.sum { |item| item.total_price }
+  end
 end
