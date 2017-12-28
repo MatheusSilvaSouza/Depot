@@ -1,22 +1,36 @@
-<h1>Store#index</h1>
-
-<ul class="catalog">
+<table class="catalog">
+  <div>
+    <thead>
+      <th>Imagem</th>
+      <th>Product</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>
+    </thead>
+  </div>
   <% cache @all_products do %>
     <% @all_products.each do |product| %>
       <% cache product do %>
-        <li class="row">
-          <div class='col-9'>
-            <%= image_tag(product.image_url) %>
+        <tr>
+          <th>
+            <%= image_tag(product.image_url, :class => "product") %>
+          </th>
+          <th>
             <h3><%= link_to(product.title, product) %></h3>
+          </th>
+          <th>
             <p><%= product.description %></p>
-          </div>
-          <div class='col-3'>
-            <%= button_to 'Add to Cart', itens_groups_path(product_id: product) %>
+          </th>
+          <th class="price" >
             <div class="price"><%= number_to_currency(product.price, unit:'R$') %></div>
-          </div>
-          <% #button_to 'Add to Cart', itens_group_path(product_id: product) %>
-        </li>
+          </th>
+          <th>
+            <%= button_to 'Add to Cart', itens_groups_path(product_id: product) %>
+          </th>
+        </tr>
+
+
       <% end %>
     <% end %>
   <% end %>
-</ul>
+</table>

@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
 
 <h1>Carts</h1>
-
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th colspan="3"></th>
@@ -18,8 +19,26 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
+<ul>
+  <% @carts.each do |cart| %>
+    <li>
+      <%= link_to 'Show', cart, :class => "show" %>
+      <%= link_to 'Edit', edit_cart_path(cart), :class => "edit" %>
+      <%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' }, :class => "destroy" %>
+
+      <ul>
+        <% cart.itens_group.each do |item| %>
+          <li>
+            <span class="quantity"><%= item.quantity %></span>
+            <%= item.product.title %>
+            <span class="price"><%= number_to_currency(item.total_price) %></span>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to 'New Cart', new_cart_path %>

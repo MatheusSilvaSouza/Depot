@@ -22,7 +22,8 @@ class ItensGroupsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
 
-    assert_select 'li', '1 \u00D7 Programming Ruby 1.9'
+    assert_select 'h2', 'Your Cart'
+    assert_select 'td', "Programming Ruby 1.9"
   end
 
   test "should show itens_group" do
