@@ -25,14 +25,14 @@
           <li>Exit</li>
         </ul>
 
-        <article id="cart">
-          <header> Cart </header>
-          <% if @cart %>
-            <%= render @cart %>
-          <% else %>
-            Empty
-          <% end %>
-        </div>
+        <% if @cart %>
+          <article>
+            <header> Cart </header>
+            <div id="cart-sidebar">
+              <%= render @cart %>
+            <div>
+          </article>
+        <% end %>
       </nav>
 
       <main class="<%= controller.controller_name %>">

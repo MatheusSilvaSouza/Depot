@@ -24,6 +24,7 @@ class ItensGroupsController < ApplicationController
     respond_to do |format|
       if @itens_group.save
         format.html { redirect_to :root }
+        format.js
         format.json { render :show, status: :created, location: @itens_group }
       else
         format.html { render :new }

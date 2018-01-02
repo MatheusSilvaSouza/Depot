@@ -1,5 +1,7 @@
-<table>
-  <%= render(cart.itens_group) %>
+<table id="cart__<%=cart.id%>" class="cart">
+  <tbody>
+    <%= render(cart.itens_group) %>
+  </tbody>
   <tfoot>
     <tr>
       <th colspan="2">Total:</td>
@@ -7,4 +9,4 @@
     </tr>
   </tfoot>
 </table>
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Empty cart', cart, method: :delete, data: { confirm: 'Are you sure?' } %>
