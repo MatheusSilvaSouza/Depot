@@ -2,23 +2,6 @@
   <% if notice %>
     <aside id="notice"><%= notice %></aside>
   <% end %>
-  <h2>Your Cart</h2>
-  <table>
-    <% @cart.itens_group.each do |item| %>
-      <tr>
-        <td class="quantity"><%= item.quantity %></td>
-        <td><%= item.product.title %></td>
-        <td class="price"><%= number_to_currency(item.total_price) %></td>
-      </tr>
-    <% end %>
-    <tfoot>
-      <tr>
-        <th colspan="2">Total:</td>
-        <td class="price"><%= number_to_currency(@cart.total_price) %></td>
-      </tr>
-    </tfoot>
-  </table>
-  <%= button_to 'Empty cart', @cart,
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
+<h2>Your Cart</h2>
+  <%= render @cart %>
 </article>

@@ -13,7 +13,7 @@ body {
 header.main {
   background: #1B88BD;
   margin: 0;
-  padding: 1%;
+  padding: 0.5%;
   h1{
     float: right;
     color: #FFF;
@@ -36,7 +36,8 @@ header.main {
   nav.side-nav{
     background: #1B88BD;
     color: #FFF;
-    padding: 0 1%;
+    padding: 0 0.5%;
+    width: 10%;
 
     ul{
       list-style: none;
@@ -58,6 +59,16 @@ header.main {
         }
       }
     }
+    #cart {
+      header {
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+      }
+      background: deepskyblue;
+      border-radius: 10%;
+      padding: 5%;
+    }
   }
 
   .notice, #notice {
@@ -72,7 +83,7 @@ header.main {
   }
 
   main{
-    width: 100%;
-    padding: 1%;
+    width: 90%;
+    padding: 0.5%;
   }
 }
